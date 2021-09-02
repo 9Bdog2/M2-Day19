@@ -127,6 +127,26 @@ Make sure you check the documentation before creting anything custom.
             border-top: 10px solid #1D478C;
         }
 
+        .btn-exercise{
+            position: relative;
+            display: inline-block;
+            border-radius: 5px;
+            background-color: rgb(60, 171, 223);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-exercise::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: opacity 0.3s ease-in-out;
+            }
+
     </style>
     </head>
 <html>
@@ -137,12 +157,7 @@ Make sure you check the documentation before creting anything custom.
 
     
 
-    <!-- EXERCISE 6
-        Add an "Add Track" button under the tracklist of the album. 
-        It should have a nice shadow transition when its hovered (with the box-shadow property) 
-        to look like as if the button was elevating itself.
-    -->
-
+    
     <!-- EXERCISE 7
         On the click of "Add Track" button, a modal should appear.
         (check in the documentation the modal + button example)
@@ -354,6 +369,13 @@ Make sure you check the documentation before creting anything custom.
         Make only one button visible at a time, for each row, when the single row gets hovered. 
         Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
     -->
+
+    <!-- EXERCISE 6 M2-D9
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
         
     <table class="table">
         <thead>
@@ -371,24 +393,25 @@ Make sure you check the documentation before creting anything custom.
             <td>Mark</td>
             <td>2Min</td>
             <td>@mdo</td>
-            <td><button type="button" class="btn btn-danger" onclick="deleteRow()">Danger</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger" onclick="deleteRow()">Delete</button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>3Min</td>
             <td>@fat</td>
-            <td><button type="button" class="btn btn-danger">Danger</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger">Delete</button></td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Larry</td>
             <td>4Min</td>
             <td>@twitter</td>
-            <td><button type="button" class="btn btn-danger">Danger</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger">Delete</button></td>
           </tr>
         </tbody>
       </table>
+      <button type="button" class="btn btn-info btn-exercise">Add Tracklist</button>
 
 
     <hr>
@@ -617,7 +640,7 @@ Make sure you check the documentation before creting anything custom.
 
 
             const deleteRow = function(){
-                const rows = document.querySelector(".table td ")
+                const rows = document.querySelector(".deleteRow ")
 
                 console.log(rows)
 
