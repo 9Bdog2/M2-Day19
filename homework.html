@@ -122,7 +122,10 @@ Make sure you check the documentation before creting anything custom.
         top: 0;
         left: 0;
         }
-
+        .table td, .table th {
+            background-color: bisque;
+            border-top: 10px solid #1D478C;
+        }
 
     </style>
     </head>
@@ -132,26 +135,7 @@ Make sure you check the documentation before creting anything custom.
 
 <body>
 
-    <!-- EXERCISE 3
-        Foreach album in the favorite list, place a badge on the top-left corner of the album with the genre of the music
-    -->
-
-    <!-- EXERCISE 4
-        Create a new section with an album tracklist inside a Bootstrap table.
-        The row colors of the table must be alternated.
-
-        There should be a column for the track order number, one for the title and one for the track duration.
-        (If you want, you can also add extra columns)
-    -->
-
-    <!-- EXERCISE 5
-        Add a DELETE bootstrap button at the end of each row of the tracklist. 
-        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
-
-        ## EXTRA CSS CHALLENGE ##
-        Make only one button visible at a time, for each row, when the single row gets hovered. 
-        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
-    -->
+    
 
     <!-- EXERCISE 6
         Add an "Add Track" button under the tracklist of the album. 
@@ -351,11 +335,59 @@ Make sure you check the documentation before creting anything custom.
             </div>
         </section>
 
+        <hr>
+
+
+        <!-- EXERCISE 4 M2-D9
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+
+    <!-- EXERCISE 5 M2-D9
+        Add a DELETE bootstrap button at the end of each row of the tracklist. 
+        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+        ## EXTRA CSS CHALLENGE ##
+        Make only one button visible at a time, for each row, when the single row gets hovered. 
+        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+    -->
         
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Track Duration</th>
+            <th scope="col">Social Media</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>2Min</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>3Min</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>4Min</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
 
 
-
-
+    <hr>
     <!-- EXERCISE 4
             Create a section for the album reviews.
             Pick one of your favourite albums, and create a section with:
