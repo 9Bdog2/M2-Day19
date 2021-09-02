@@ -362,6 +362,7 @@ Make sure you check the documentation before creting anything custom.
             <th scope="col">Title</th>
             <th scope="col">Track Duration</th>
             <th scope="col">Social Media</th>
+            <th scope="col">Delete Btn</th>
           </tr>
         </thead>
         <tbody>
@@ -370,18 +371,21 @@ Make sure you check the documentation before creting anything custom.
             <td>Mark</td>
             <td>2Min</td>
             <td>@mdo</td>
+            <td><button type="button" class="btn btn-danger" onclick="deleteRow()">Danger</button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>3Min</td>
             <td>@fat</td>
+            <td><button type="button" class="btn btn-danger">Danger</button></td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Larry</td>
             <td>4Min</td>
             <td>@twitter</td>
+            <td><button type="button" class="btn btn-danger">Danger</button></td>
           </tr>
         </tbody>
       </table>
@@ -612,6 +616,12 @@ Make sure you check the documentation before creting anything custom.
             }
 
 
+            const deleteRow = function(){
+                const rows = document.querySelector(".table td ")
+
+                console.log(rows)
+
+            }
         </script>
 
 
