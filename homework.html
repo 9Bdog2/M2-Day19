@@ -115,8 +115,14 @@ Make sure you check the documentation before creting anything custom.
         to {
             opacity: 1
         }
-  
-}
+        }
+
+        .prime-badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+
 
     </style>
     </head>
@@ -260,35 +266,43 @@ Make sure you check the documentation before creting anything custom.
         Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
         -->
 
+        <!-- EXERCISE 3 M2-D9
+        Foreach album in the favorite list, place a badge on the top-left corner of the album with the genre of the music
+         -->
+
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card bg-info" style="width: 18rem;">
+                    <div class="card bg-info position-relative" style="width: 18rem;">
                         <img src="http://www.noiseaddicts.com/wp-content/uploads/2009/03/acastus.jpg" class="card-img-top" alt="...">
+                        <img src="logo/prime.svg" class="prime-badge" />
                         <div class="card-body">
                           <p class="card-text">Album Title: Before the next chance</br>Artist: Acastus </br>Year: 1992 </br></p>
                         </div>
                       </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card bg-info" style="width: 18rem;">
+                    <div class="card bg-info position-relative" style="width: 18rem;">
                         <img src="http://www.noiseaddicts.com/wp-content/uploads/2009/03/wielopole-skrzynskie-found-your-place.jpg" class="card-img-top" alt="...">
+                        <img src="logo/prime.svg" class="prime-badge" />
                         <div class="card-body">
                           <p class="card-text">Album Title: Found your place</br>Artist: WS </br>Year: 2000 </br></p>
                         </div>
                       </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card bg-info" style="width: 18rem;">
+                    <div class="card bg-info position-relative" style="width: 18rem;">
                         <img src="http://www.noiseaddicts.com/wp-content/uploads/2009/03/baxter-woods-all-is-vanity.jpg" class="card-img-top" alt="...">
+                        <img src="logo/prime.svg" class="prime-badge" />
                         <div class="card-body">
                           <p class="card-text">Album Title: All is vanity</br>Artist: BW </br>Year: 1999 </br></p>
                         </div>
                       </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card bg-info" style="width: 18rem;">
+                    <div class="card bg-info position-relative" style="width: 18rem;">
                         <img src="http://www.noiseaddicts.com/wp-content/uploads/2009/03/cover56.jpg" class="card-img-top" alt="...">
+                        <img src="logo/prime.svg" class="prime-badge" />
                         <div class="card-body">
                           <p class="card-text">Album Title: Been a fine day</br>Artist: Two Stroke Diesel </br>Year: 2005 </br></p>
                         </div>
