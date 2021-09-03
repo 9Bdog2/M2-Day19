@@ -122,9 +122,91 @@ Make sure you check the documentation before creting anything custom.
         top: 0;
         left: 0;
         }
-        .table td, .table th {
-            background-color: bisque;
-            border-top: 10px solid #1D478C;
+        
+        table tbody tr:nth-of-type(odd) {
+        background-color: bisque;
+        }
+
+        .table thead th,
+        .table tbody th,
+        .table thead td,
+        .table tbody td {
+        border: none;
+        /* resets table's borders */
+        }
+
+        .table td,
+        .table th {
+        vertical-align: middle;
+        }
+
+        footer a {
+        display: inline-block;
+        margin: 0 25px;
+        }
+
+        /* EXERCISE 5.EXTRA */
+        .tracklist tr button {
+        opacity: 0;
+        transition: opacity 0.25s;
+        }
+
+        .tracklist tr:hover button {
+        opacity: 1;
+        }
+
+        footer li {
+        list-style: none;
+        }
+
+        footer li a {
+        color: white;
+        }
+
+        .alert-message {
+        position: fixed;
+        bottom: 3em;
+        left: 3em;
+        width: 30%;
+        animation: slide-in 1s forwards;
+        }
+
+        /* modal close X btn to be visible on dark background*/
+        .close {
+        filter: invert(1);
+        }
+
+        /* Animations */
+        .fade-in {
+        animation: fade-in 1s forwards;
+        }
+
+        .fade-out {
+        animation: fade-in 1s reverse forwards;
+        }
+
+        .fade--long {
+        animation-duration: 3s;
+        }
+
+        @keyframes slide-in {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+        }
+
+        @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
         }
 
         .btn-exercise{
@@ -387,27 +469,27 @@ Make sure you check the documentation before creting anything custom.
             <th scope="col">Delete Btn</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tracklist">
           <tr>
             <th scope="row">1</th>
             <td>Mark</td>
             <td>2Min</td>
             <td>@mdo</td>
-            <td><button class="deleteRow" type="button" class="btn btn-danger" onclick="deleteRow()">Delete</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger" onclick="deleteRow(event)">Delete</button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>3Min</td>
             <td>@fat</td>
-            <td><button class="deleteRow" type="button" class="btn btn-danger">Delete</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger" onclick="deleteRow(event)" >Delete</button></td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Larry</td>
             <td>4Min</td>
             <td>@twitter</td>
-            <td><button class="deleteRow" type="button" class="btn btn-danger">Delete</button></td>
+            <td><button class="deleteRow" type="button" class="btn btn-danger" onclick="deleteRow(event)" >Delete</button></td>
           </tr>
         </tbody>
       </table>
@@ -582,7 +664,9 @@ Make sure you check the documentation before creting anything custom.
             </div>
         </footer>
 
-
+        <div class="alert alert-success alert-message d-none" role="alert">
+            A simple success alert—check it out!
+        </div>
 
        
 
@@ -638,12 +722,14 @@ Make sure you check the documentation before creting anything custom.
                 document.querySelector("footer").appendChild(span)
             }
 
-
-            const deleteRow = function(){
-                const rows = document.querySelector(".deleteRow ")
-
+            const bsAlert = document.querySelector(".alert.alert-success")
+            
+            const deleteRow = function(e){
+                const rows = e.target.closest("tr").querySelector("td:first-of-type").innerHTML
+                bsAlert.innerHTML = `You successfully removed <strong> ${rows} <strong>`
+                
+                const tr = e.target.closest("tr")
                 console.log(rows)
-
             }
         </script>
 
