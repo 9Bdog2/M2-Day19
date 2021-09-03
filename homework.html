@@ -209,24 +209,13 @@ Make sure you check the documentation before creting anything custom.
         }
         }
 
-        .btn-exercise{
-            position: relative;
-            display: inline-block;
-            border-radius: 5px;
-            background-color: rgb(60, 171, 223);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-            transition: all 0.3s ease-in-out;
-        }
-        .btn-exercise::after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: opacity 0.3s ease-in-out;
+            .btn-shadow {
+            transition: all 0.3s ease;
+            }
+
+            .btn-shadow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px #34005a;
             }
 
     </style>
@@ -493,7 +482,7 @@ Make sure you check the documentation before creting anything custom.
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-info btn-exercise">Add Tracklist</button>
+      <button  class="btn btn-info btn-exercise btn-shadow" data-toggle="modal" data-target="#add-track-modal">Add Tracklist</button>
 
 
     <hr>
